@@ -34,6 +34,7 @@ export interface MetadataMenuSettings {
 	fileIndexingExcludedRegex: Array<string>;
 	frontmatterOnly: boolean;
 	showFileClassSelectInModal: boolean;
+	ignoreDiacriticsInTableViewSearch: boolean;
 	chooseFileClassAtFileCreation: boolean;
 	autoInsertFieldsAtFileClassInsertion: boolean;
 	fileClassIcon: string;
@@ -69,6 +70,7 @@ export const DEFAULT_SETTINGS: MetadataMenuSettings = {
 	fileIndexingExcludedRegex: [],
 	frontmatterOnly: false,
 	showFileClassSelectInModal: true,
+	ignoreDiacriticsInTableViewSearch: true,
 	chooseFileClassAtFileCreation: false,
 	autoInsertFieldsAtFileClassInsertion: false,
 	fileClassIcon: "package",
