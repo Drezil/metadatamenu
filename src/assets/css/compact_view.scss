@@ -1,0 +1,245 @@
+.metadata-menu-dv-field-container {
+    /* 
+    In Metadata menu plugin, when going in Table view, this allows to put lists on several lines. 
+    This is especially useful when having a lot of columns (avoids media to shrink too much).
+    */
+    display: block;
+    margin-left: 10px;
+}
+
+.view-container .options .fields {
+    /* display: block !important; */
+    /* flex-direction: column; */
+}
+
+.view-container .options .fields .field-container {
+    /* Enforce all the filters to have the same size (less fuzzy UI) */
+    width: 15% !important;
+}
+
+.metadata-menu.fileclass-view .fv-table .options .fields .field-container .field-header .label-container .field-name {
+    max-width: 100px;
+    overflow: scroll;
+}
+
+/* Hide the class icon link in the Table View of a class */
+.metadata-menu.fileclass-icon.dataview-fileclass-icon {
+    /* display: none !important; */
+}
+
+/* Avoid mess with lists in table view. */
+.metadata-menu.fileclass-view .fv-table div[id^=table-container] .value-container span {
+    display: unset;
+    /* instead of grid */
+}
+
+.fileclass-view-content ul.dataview.dataview-ul.dataview-result-list-root-ul {
+    list-style: disc;
+    margin-left: 15px !important;
+}
+
+.metadata-menu.fileclass-view .fv-table div[id^=table-container] .value-container .el-p {
+    /* In metadata menu Table view, avoid bullets on two columns. */
+    float: none;
+}
+
+/* Avoid the table content to be visible behind the headers. */
+.theme-dark .fileclass-view-content table .table-view-th {
+    background: #111111ff;
+}
+
+.theme-light .fileclass-view-content table .table-view-th {
+    background: rgb(255, 255, 255);
+}
+
+.fileclass-view-content .table-view-table>tbody>tr>td {
+    /* Add a black line to better see each row. */
+    border-bottom: 2px solid black;
+    /* min-width: 500px; */
+}
+
+.fileclass-view-content .table-view-table>tbody>tr>td:first-child {
+    height: auto !important;
+}
+
+/* Resizable columns. */
+.fileclass-view-content .table-view-table>thead>tr>th>.el-p {
+    resize: horizontal;
+    overflow: auto;
+}
+
+.fileclass-view-content .table-view-table>thead>tr>th
+
+/*:first-child*/
+    {
+    resize: horizontal;
+    overflow: auto;
+    height: auto !important;
+}
+
+.fileclass-view-content .table-view-table>thead>tr>th:first-child>.el-p {
+    resize: none;
+    overflow: auto;
+}
+
+.metadata-menu.fileclass-view .fv-table div[id^=table-container] thead th.table-view-th:first-child .spacer {
+    width: 0px;
+}
+
+/* Resizable lines. (not working)*/
+/* .table-view-table > tbody > tr > td:first-child {
+    height: auto;
+    resize: vertical;
+    overflow: auto;
+}
+.table-view-table > tbody > tr > td:first-child > .el-p {
+    resize: none;
+    overflow: auto;
+} */
+
+/* Add a black line above each Acupoint (more or less in the continuity of the black line of the other cells) */
+.fileclass-view-content .table-view-table>tbody>tr>td:first-child {
+    border-top: 2px solid black;
+}
+
+.fileclass-view-content .table-view-table>tbody>tr>td:first-child .el-p {
+    display: block !important;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.fileclass-view-content .table-view-table>tbody>tr>td>span {
+    /* Scrollable content */
+    display: block;
+
+    overflow: scroll;
+}
+
+/* Needed for resizable columns. */
+.fileclass-view-content .table-view-table .el-p {
+    display: block !important;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.fileclass-view-content .table-view-table .el-ol {
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+/* Enforce the images to be rescalable in the table view. */
+.table-view-table .image-embed>img {
+    width: auto !important;
+}
+
+
+/* .table-view-table .table-view-tbody tr td span .metadata-menu-dv-field-container button {
+    display: inline !important;
+} */
+
+.table-view-table .column-id,
+.table-view-table .table-view-tr-header .table-view-th:first-child span,
+.table-view-table .table-view-tr-header .table-view-th span {
+    font-size: small;
+}
+
+/* ----------------------------------------------- */
+/* span Multi fields on several lines if necessary */
+/* ----------------------------------------------- */
+
+.fileclass-view-content .table-view-table .table-view-tbody td {
+    min-height: 1px;
+    /* hack so that the span child fits 100%. */
+}
+
+.fileclass-view-content .table-view-table .table-view-tbody td span {
+    height: 100%;
+    display: inline-table;
+    /* avoid extra visual decorations */
+}
+
+.fileclass-view-content .table-view-table .table-view-tbody td span .metadata-menu-dv-field-container .values-container {
+    /* background-color: blue; */
+    flex-wrap: wrap;
+    /* already "display: flex" by default*/
+}
+
+.fileclass-view-content .table-view-table .table-view-tbody td span .metadata-menu-dv-field-container .values-container .item-container .label {
+    height: fit-content;
+    text-align: justify;
+}
+
+.fileclass-view-content .table-view-table .table-view-tbody td span .metadata-menu-dv-field-container>button {
+    /* text-align: justify; */
+    display: inline-block !important;
+}
+
+.fileclass-view-content .table-view-table .table-view-tbody td span .metadata-menu-dv-field-container .values-container>button {
+    display: inline-block !important;
+}
+
+/* -------------------- */
+/* Header of Table View */
+/* -------------------- */
+
+.metadata-menu.fileclass-view .fv-table .options .small_options_container {
+    display: flex;
+    gap: 10px;
+}
+
+.metadata-menu.fileclass-view .fv-menu * {
+    visibility: hidden;
+    height: 5px;
+}
+
+.metadata-menu.fileclass-view .fv-menu {
+    border-radius: 1px;
+    border-width: 1px;
+    background-color: var(--color-accent-2);
+    /* variable from Prism theme? */
+    margin-bottom: 5px;
+}
+
+.metadata-menu.fileclass-view .fv-menu:hover {
+    background-color: unset;
+}
+
+.metadata-menu.fileclass-view .fv-menu:hover * {
+    visibility: visible;
+    height: auto;
+    background-color: unset;
+}
+
+.metadata-menu.fileclass-view .fv-menu .fv-menu-item {
+    height: auto;
+    margin-bottom: 0px;
+}
+
+.metadata-menu.fileclass-view .limit input {
+    width: 40px;
+}
+
+.metadata-menu.fileclass-view .options {
+    display: flex;
+    flex-direction: column;
+}
+
+.metadata-menu.fileclass-view .options .footer .cell * {
+    margin-top: auto !important;
+}
+
+/* quick search */
+.metadata-menu.fileclass-view .options .search {
+    display: flex;
+    align-items: center;
+}
+
+.metadata-menu.fileclass-view .options .search * {
+    height: 100%;
+}
+
+
+/* Add an opaque background to the table header */
+.fileclass-view-content .view-container .fv-table .table-view-table .table-view-thead .table-view-tr-header th {
+    background-color: var(--background-secondary);
+}
