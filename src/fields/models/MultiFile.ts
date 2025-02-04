@@ -180,6 +180,31 @@ export function valueModal(managedField: IFieldManager<Target, Options>, plugin:
         async onChooseItem(item: TFile): Promise<void> {
 
         }
+
+        async onAdd(): Promise<void> {
+            const vault = this.managedField.plugin.app.vault;
+            const newFileName = this.inputEl.value;
+            const targetDirectory = this.managedField.options.customFileDirectory ?? "";
+            const filePath = `${targetDirectory}/${newFileName}.md`;
+            try {
+                // Create new file
+                const newFile = await vault.create(filePath, "");
+                
+                // Add the new file to selected files
+                if (newFile instanceof TFile) {
+                    this.selectedFiles.push(newFile);
+                    this.renderSelected();
+                    // clear input
+                    this.inputEl.value = "";
+                    // Wait a little before firing the input event to 
+                    // allow dataview to recognize the new file
+                    await new Promise(resolve => setTimeout(resolve, 10));
+                    this.inputEl.trigger("input");
+                }
+            } catch (error) {
+                console.error("Failed to create new file:", error);
+            }
+        }
     }
 }
 
